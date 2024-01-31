@@ -50,31 +50,31 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 First thing first, before testing the code, you have to install libraries through terminal or CLI as follows :
 
-1. npm install -D jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
-2. npm init jest@latest (for jest config) and choose:
-    - ✔ Would you like to use Jest when running "test" script in "package.json"? … yes
-    - ✔ Would you like to use Typescript for the configuration file? … yes
-    - ✔ Choose the test environment that will be used for testing › jsdom (browser-like)
-    - ✔ Do you want Jest to add coverage reports? … yes
-    - ✔ Which provider should be used to instrument code for coverage? › babel
-    - ✔ Automatically clear mock calls and instances between every test? … no
-3. npm i -D ts-node
-4. npm i --save-dev @types/jest
-5. npm install --save-dev @babel/preset-typescript
-6. npm install --save-dev @babel/preset-typescript @babel/preset-react
-7. npm i -D @babel/preset-env
-8. npm install @testing-library/jest-dom --save-dev
+1) npm install -D jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
+2) npm init jest@latest (for jest config) and choose:
+    - Would you like to use Jest when running "test" script in "package.json"? (Y/N) -> type Y and click enter (Y for Yes)
+    - Would you like to use Typescript for the configuration file? (Y/N) -> type Y and click enter (Y for Yes)
+    - Choose the test environment that will be used for testing › jsdom (browser-like)
+    - Do you want Jest to add coverage reports? (Y/N) -> type Y and click enter (Y for Yes)
+    - Which provider should be used to instrument code for coverage? › babel
+    - Automatically clear mock calls and instances between every test? (Y/N) -> type N and click enter (N for No)
+3) npm i -D ts-node
+4) npm i --save-dev @types/jest
+5) npm install --save-dev @babel/preset-typescript
+6) npm install --save-dev @babel/preset-typescript @babel/preset-react
+7) npm i -D @babel/preset-env
+8) npm install @testing-library/jest-dom --save-dev
 
 ## Setting config file for testing
 
-1. Create file babel.config.js on your project and add this code
+1) Create file babel.config.js on your project and add this code
 ```javascript
 module.exports = {
   presets: [`@babel/preset-env`, `@babel/preset-react`]
 };
 ```
 
-2. Create or change file into jest.config.ts and add this code
+2) Create or change file into jest.config.ts and add this code
 ```javascript
 import type { Config } from 'jest';
 import nextJest from 'next/jest.js';
@@ -100,7 +100,7 @@ const config: Config = {
 export default createJestConfig(config);
 ```
 
-3. Or you can copy this file package.json and paste to your package.json (dont forget to change the name of your project, version and npm install after that)
+3) Or you can copy this file package.json and paste to your package.json (dont forget to change the name of your project, version and npm install after that)
 ```javascript
 {
   "name": "assignment_week_13",
@@ -154,7 +154,7 @@ export default createJestConfig(config);
 }
 ```
 
-4. Matching tsconfig.json into this code
+4) Matching tsconfig.json into this code
 ```javascript
 {
   "compilerOptions": {
@@ -182,7 +182,7 @@ export default createJestConfig(config);
 
 ## Add file for npm run dev after testing
 
-1. Create file next.config.js on your project and add this code
+1) Create file next.config.js on your project and add this code
 ```javascript
 module.exports = {
   experimental: {
