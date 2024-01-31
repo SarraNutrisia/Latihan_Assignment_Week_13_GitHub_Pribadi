@@ -1,10 +1,21 @@
-import { render } from '@testing-library/react'
-import Navbar from '.'
+import { render } from '@testing-library/react';
+import Navbar from '.';
+import { useRouter } from 'next/router';
+
+jest.mock('next/router', () => ({
+  useRouter: jest.fn(),
+}));
 
 describe('Navbar component unit testing', () => {
+  test('Navbar renders correctly', () => {
+    const mockPush = jest.fn();
     
-    test('Navbar render correctly', () => {
-        const document =  render(<Navbar/>) 
-        expect(document).toMatchSnapshot()
-    })
-})
+    (useRouter as jest.Mock).mockImplementation(() => ({
+      pathname: '/',
+      push: mockPush,
+    }));
+
+    const document = render(<Navbar />);
+    expect(document).toMatchSnapshot();
+  });
+});
